@@ -7,7 +7,7 @@ platform:
 
 steps:
 - name: test
-  image: pytest
+  image: qnib/pytest
   commands:
   - pytest webapp/
 ...
