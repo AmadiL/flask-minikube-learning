@@ -7,7 +7,8 @@ platform:
 
 steps:
 - name: test
-  image: qnib/pytest
+  image: python:3.7.3-alpine3.9
   commands:
+  - pip install --no-cache-dir -r webapp/requirements.txt
   - pytest webapp/
 ...
