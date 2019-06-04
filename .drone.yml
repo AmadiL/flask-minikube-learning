@@ -1,0 +1,13 @@
+---
+kind: pipeline
+name: default
+
+platform:
+  os: linux
+
+steps:
+- name: test
+  image: pytest
+  commands:
+  - pytest webapp/
+...
