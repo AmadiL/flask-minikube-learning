@@ -9,6 +9,21 @@ steps:
 - name: test
   image: python:3.7.3-alpine3.9
   commands:
-  - pip install --no-cache-dir -r webapp/requirements.txt
-  - pytest webapp/
+  - apk add make
+  - make install
+  - make test
+
+- name: build image
+  image: docker
+  commands:
+  - apk add make
+  - make docker-build
+  volumes:
+    - name: docker
+      path: /var/run/docker.sock
+
+volumes:
+- name: docker
+  host:
+    path: /var/run/docker.sock
 ...
