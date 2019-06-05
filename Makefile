@@ -9,7 +9,7 @@ TAG = latest
 APP_IMAGE = amadil/test-webapp-gunicorn:$(TAG)
 
 install:
-	pip install -r app/requirements.txt
+	pip install -r webapp/requirements.txt
 
 run-develop:
 	FLASK_ENV=development FLASK_APP=$(APP) flask run
